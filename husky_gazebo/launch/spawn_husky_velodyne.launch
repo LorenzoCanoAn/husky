@@ -51,7 +51,6 @@ DAMAGE.
 
     <!-- Optionally disable teleop control -->
     <arg name="joystick" default="false" />
-    <arg name="spawn_as_static" default="0" />
     <group ns="$(arg robot_namespace)">
 
         <group if="$(arg multimaster)">
@@ -60,7 +59,6 @@ DAMAGE.
                 <arg name="laser_enabled" default="$(arg laser_enabled)" />
                 <arg name="realsense_enabled" default="$(arg realsense_enabled)" />
                 <arg name="urdf_extras" default="$(arg urdf_extras)" />
-                <arg name="spawn_as_static" default="$(arg spawn_as_static)" />
             </include>
 
             <include file="$(find multimaster_launch)/launch/multimaster_gazebo_robot.launch">
@@ -82,7 +80,6 @@ DAMAGE.
                 <arg name="laser_enabled" value="$(arg laser_enabled)" />
                 <arg name="realsense_enabled" default="$(arg realsense_enabled)" />
                 <arg name="urdf_extras" value="$(arg urdf_extras)" />
-                <arg name="spawn_as_static" value="$(arg spawn_as_static)" />
             </include>
             <include file="$(find husky_control)/launch/teleop.launch">
                 <arg name="joystick" value="$(arg joystick)" />
